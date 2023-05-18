@@ -13,9 +13,10 @@ Privoxy from yum.
 docker run --rm -it --cap-add NET_ADMIN --name ovp -p 8118:8118 -v /loc/dir/path/config.ovpn:/home/config.ovpn purplestone/openvpn-privoxy none
 
 
-docker run -d --restart always --cap-add NET_ADMIN --dns=8.8.8.8 --name ovp -p 8118:8118 -v /loc/dir/path/config.ovpn:/home/config.ovpn purplestone/openvpn-privoxy:1.2.3.1 192.168.255.22:3128
+docker run -d --restart always --cap-add NET_ADMIN --network host --dns=8.8.8.8 --name ovp -p 8118:8118 -v /loc/dir/path/config.ovpn:/home/config.ovpn purplestone/openvpn-privoxy:1.2.3.1 192.168.255.22:3128
 ```
 ![原理图](openvpn-privoxy.png)
+
 
 ## API
 
